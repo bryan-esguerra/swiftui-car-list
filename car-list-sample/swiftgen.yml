@@ -1,0 +1,17 @@
+strings:
+  inputs: Resources/Strings
+  outputs:
+    templateName: structured-swift5
+    output: Generated/SwiftGen/Strings/Strings.swift
+
+fonts:
+  inputs: Resources/Fonts
+  outputs:
+    templateName: swift5
+    output: Generated/SwiftGen/Fonts/Fonts.swift
+
+xcassets:
+  inputs: Resources/Assets
+  outputs:
+    templateName: swift5
+    output: Generated/SwiftGen/Assets/Assets.swift
