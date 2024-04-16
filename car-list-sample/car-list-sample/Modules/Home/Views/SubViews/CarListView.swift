@@ -14,7 +14,15 @@ struct CarListView: View {
     var body: some View {
         ScrollView {
             BannerView()
-            ForEach(Array(viewModel.cars.enumerated()), id: \.element.make) { index, car in
+
+            FilterView(
+                makes: viewModel.availableMakes,
+                models: viewModel.availableModels,
+                selectedMake: $viewModel.selectedMake,
+                selectedModel: $viewModel.selectedModel
+            )
+
+            ForEach(Array(viewModel.filteredCars.enumerated()), id: \.element.make) { index, car in
                 CarView(car: car, index: index, selectedIndex: $selectedIndex)
                     .padding(.leading, 15)
                     .padding(.trailing, 15)
@@ -35,5 +43,8 @@ struct CarListView: View {
         }
         .navigationBarHidden(true)
         .showCustomNavBar()
+        .onChange(of: viewModel.filteredCars) { _ in
+            selectedIndex = 0
+        }
     }
 }

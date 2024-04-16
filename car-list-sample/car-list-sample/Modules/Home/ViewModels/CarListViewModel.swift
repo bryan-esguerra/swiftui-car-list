@@ -11,6 +11,28 @@ import Foundation
 class CarListViewModel: ObservableObject {
     private var cancellables = Set<AnyCancellable>()
     @Published var cars: [CarDto] = []
+    @Published var filteredCars: [CarDto] = []
+    var availableMakes: [String] = []
+    var availableModels: [String] = []
+    let defaultMaker = "Any make"
+    let defaultModel = "Any model"
+
+    @Published var selectedMake: String {
+        didSet {
+            filterCars()
+        }
+    }
+
+    @Published var selectedModel: String {
+        didSet {
+            filterCars()
+        }
+    }
+
+    init() {
+        selectedMake = defaultMaker
+        selectedModel = defaultModel
+    }
 
     func fetchCars() {
         guard let url = Bundle.main.url(forResource: "car_list", withExtension: "json") else {
@@ -31,8 +53,29 @@ class CarListViewModel: ObservableObject {
             } receiveValue: { [weak self] cars in
                 DispatchQueue.main.async {
                     self?.cars = cars
+                    self?.filteredCars = cars
+                    self?.updateAvailableMakesAndModels(from: cars)
                 }
             }
             .store(in: &cancellables)
+    }
+
+    private func updateAvailableMakesAndModels(from cars: [CarDto]) {
+        availableMakes = [defaultMaker] + Array(Set(cars.compactMap { $0.make }))
+        availableModels = [defaultModel] + Array(Set(cars.compactMap { $0.model }))
+    }
+
+    private func filterCars() {
+        if selectedMake == defaultMaker && selectedModel == defaultModel {
+            filteredCars = cars
+        } else if selectedMake != defaultMaker && selectedModel != defaultModel {
+            filteredCars = cars.filter { $0.make == selectedMake && $0.model == selectedModel }
+        } else if selectedMake != defaultMaker {
+            filteredCars = cars.filter { $0.make == selectedMake }
+        } else if selectedModel != defaultModel {
+            filteredCars = cars.filter { $0.model == selectedModel }
+        } else {
+            filteredCars = cars
+        }
     }
 }
