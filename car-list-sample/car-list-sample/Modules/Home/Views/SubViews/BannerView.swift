@@ -30,6 +30,5 @@ struct BannerView: View {
             .alignmentGuide(.bottom) { _ in 0 }
             .alignmentGuide(.trailing) { _ in 0 }
         }
-        .padding(.bottom, 5)
     }
 }
