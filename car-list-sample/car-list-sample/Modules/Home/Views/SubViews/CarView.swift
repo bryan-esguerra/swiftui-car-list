@@ -14,7 +14,8 @@ struct CarView: View {
     @Binding var selectedIndex: Int?
     @State var customConfig = StarRatingConfiguration(
         spacing: 5,
-        numberOfStars: 5,
+        numberOfStars: 10,
+        minRating: 0,
         borderWidth: 0,
         shadowRadius: 0,
         fillColors: [Asset.Color.orange.swiftUIColor]
@@ -30,19 +31,22 @@ struct CarView: View {
                         .frame(width: 140, height: 70)
                         .aspectRatio(contentMode: .fit)
 
-                    VStack {
-                        DefaultTextStyle(title: car.model ?? "",
-                                         size: 18,
+                    VStack(spacing: 2) {
+                        DefaultTextStyle(title: "\(car.make ?? "") \(car.model ?? "")",
+                                         size: 16,
                                          fontColor: Asset.Color.darkGray.swiftUIColor,
                                          fontWeight: .w600,
                                          textAlign: .leading)
                             .padding(.leading, 10)
+                            .fixedSize(horizontal: false, vertical: true)
                         DefaultTextStyle(title: L10n.List.Price.label(formatNumber(Int(car.customerPrice))),
                                          size: 14,
                                          fontColor: Asset.Color.darkGray.swiftUIColor,
                                          textAlign: .leading)
                             .padding(.leading, 10)
+                            .frame(height: 15)
                         StarRating(initialRating: Double(car.rating), configuration: $customConfig)
+                            .frame(height: 15)
                     }
                 }
 
