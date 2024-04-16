@@ -43,7 +43,7 @@ final class CarCoreDataService: CoreDataService {
         do {
             guard let result = try context.fetch(fetchRequest) as? [NSManagedObject] else { return nil }
 
-            let cars = result.compactMap { (object) -> CarDto? in
+            let cars = result.compactMap { object -> CarDto? in
                 guard
                     let make = object.value(forKey: "make") as? String,
                     let model = object.value(forKey: "model") as? String,
@@ -61,7 +61,8 @@ final class CarCoreDataService: CoreDataService {
                     marketPrice: marketPrice,
                     rating: Int(rating),
                     prosList: pros.components(separatedBy: ","),
-                    consList: cons.components(separatedBy: ","))
+                    consList: cons.components(separatedBy: ",")
+                )
             }
 
             return cars
@@ -71,4 +72,3 @@ final class CarCoreDataService: CoreDataService {
         }
     }
 }
-

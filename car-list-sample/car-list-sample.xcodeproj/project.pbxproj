@@ -10,7 +10,6 @@
 		3CC9EF372BCEA664000F4A6B /* car_list_sampleApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9EF362BCEA664000F4A6B /* car_list_sampleApp.swift */; };
 		3CC9EF3B2BCEA666000F4A6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9EF3A2BCEA666000F4A6B /* Assets.xcassets */; };
 		3CC9EF3E2BCEA666000F4A6B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9EF3D2BCEA666000F4A6B /* Preview Assets.xcassets */; };
-		3CC9EF402BCEA666000F4A6B /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9EF3F2BCEA666000F4A6B /* Persistence.swift */; };
 		3CC9EF432BCEA666000F4A6B /* car_list_sample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9EF412BCEA666000F4A6B /* car_list_sample.xcdatamodeld */; };
 		3CC9EF552BCEA834000F4A6B /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9EF502BCEA833000F4A6B /* Poppins-Bold.ttf */; };
 		3CC9EF562BCEA834000F4A6B /* Poppins-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9EF512BCEA833000F4A6B /* Poppins-Light.ttf */; };
@@ -54,7 +53,6 @@
 		3CC9EF362BCEA664000F4A6B /* car_list_sampleApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = car_list_sampleApp.swift; sourceTree = "<group>"; };
 		3CC9EF3A2BCEA666000F4A6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3CC9EF3D2BCEA666000F4A6B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		3CC9EF3F2BCEA666000F4A6B /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		3CC9EF422BCEA666000F4A6B /* car_list_sample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = car_list_sample.xcdatamodel; sourceTree = "<group>"; };
 		3CC9EF502BCEA833000F4A6B /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
 		3CC9EF512BCEA833000F4A6B /* Poppins-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Light.ttf"; sourceTree = "<group>"; };
@@ -134,7 +132,6 @@
 				3CC9EF6F2BCEAB27000F4A6B /* Modules */,
 				3CC9EF6B2BCEAAFD000F4A6B /* Data */,
 				3CC9EF3A2BCEA666000F4A6B /* Assets.xcassets */,
-				3CC9EF3F2BCEA666000F4A6B /* Persistence.swift */,
 				3CC9EF3C2BCEA666000F4A6B /* Preview Content */,
 			);
 			path = "car-list-sample";
@@ -546,7 +543,6 @@
 				3CC9EFA82BCEE0E2000F4A6B /* CoreDataService.swift in Sources */,
 				3CC9EF982BCEC44D000F4A6B /* BannerView.swift in Sources */,
 				3CC9EFAA2BCEE16B000F4A6B /* CarCoreDataService.swift in Sources */,
-				3CC9EF402BCEA666000F4A6B /* Persistence.swift in Sources */,
 				3CC9EF7B2BCEACF6000F4A6B /* Assets.swift in Sources */,
 				3CC9EF8B2BCEADD7000F4A6B /* LineDivider.swift in Sources */,
 				3CC9EFA02BCED01A000F4A6B /* PickerView.swift in Sources */,
