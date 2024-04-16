@@ -33,5 +33,6 @@ struct ProsConsView: View {
             }
         }
         .padding(.leading, 10)
+        .transition(.opacity)
     }
 }

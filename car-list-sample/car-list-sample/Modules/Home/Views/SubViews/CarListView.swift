@@ -19,10 +19,12 @@ struct CarListView: View {
                     .padding(.leading, 15)
                     .padding(.trailing, 15)
                     .onTapGesture {
-                        if self.selectedIndex == index {
-                            self.selectedIndex = nil
-                        } else {
-                            self.selectedIndex = index
+                        withAnimation {
+                            if self.selectedIndex == index {
+                                self.selectedIndex = nil
+                            } else {
+                                self.selectedIndex = index
+                            }
                         }
                     }
                 Spacer()
