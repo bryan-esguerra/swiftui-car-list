@@ -25,6 +25,17 @@
 		3CC9EF6A2BCEAA88000F4A6B /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9EF682BCEAA88000F4A6B /* .swiftlint.yml */; };
 		3CC9EF6E2BCEAB12000F4A6B /* CarDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9EF6D2BCEAB12000F4A6B /* CarDto.swift */; };
 		3CC9EF772BCEAB71000F4A6B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9EF762BCEAB71000F4A6B /* HomeView.swift */; };
+		3CC9EF792BCEACA5000F4A6B /* CarListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9EF782BCEACA5000F4A6B /* CarListViewModel.swift */; };
+		3CC9EF7B2BCEACF6000F4A6B /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9EF7A2BCEACF6000F4A6B /* Assets.swift */; };
+		3CC9EF7D2BCEACFE000F4A6B /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9EF7C2BCEACFE000F4A6B /* Fonts.swift */; };
+		3CC9EF7F2BCEAD01000F4A6B /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9EF7E2BCEAD01000F4A6B /* Strings.swift */; };
+		3CC9EF822BCEAD2C000F4A6B /* CarListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9EF812BCEAD2C000F4A6B /* CarListView.swift */; };
+		3CC9EF842BCEAD66000F4A6B /* car_list.json in Resources */ = {isa = PBXBuildFile; fileRef = 3CC9EF832BCEAD66000F4A6B /* car_list.json */; };
+		3CC9EF872BCEADA8000F4A6B /* CustomNavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9EF862BCEADA8000F4A6B /* CustomNavBar.swift */; };
+		3CC9EF892BCEADBD000F4A6B /* DefaultTextStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9EF882BCEADBD000F4A6B /* DefaultTextStyle.swift */; };
+		3CC9EF8B2BCEADD7000F4A6B /* LineDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9EF8A2BCEADD7000F4A6B /* LineDivider.swift */; };
+		3CC9EF8E2BCEADF5000F4A6B /* Text+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9EF8D2BCEADF5000F4A6B /* Text+Extension.swift */; };
+		3CC9EF962BCEB493000F4A6B /* StarRating in Frameworks */ = {isa = PBXBuildFile; productRef = 3CC9EF952BCEB493000F4A6B /* StarRating */; };
 		D1EDA58900D2E3A6C67FED36 /* Pods_car_list_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38BB8C48C3F5C1DD1D69A686 /* Pods_car_list_sample.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +61,16 @@
 		3CC9EF682BCEAA88000F4A6B /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		3CC9EF6D2BCEAB12000F4A6B /* CarDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarDto.swift; sourceTree = "<group>"; };
 		3CC9EF762BCEAB71000F4A6B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		3CC9EF782BCEACA5000F4A6B /* CarListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListViewModel.swift; sourceTree = "<group>"; };
+		3CC9EF7A2BCEACF6000F4A6B /* Assets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
+		3CC9EF7C2BCEACFE000F4A6B /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		3CC9EF7E2BCEAD01000F4A6B /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		3CC9EF812BCEAD2C000F4A6B /* CarListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarListView.swift; sourceTree = "<group>"; };
+		3CC9EF832BCEAD66000F4A6B /* car_list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = car_list.json; sourceTree = "<group>"; };
+		3CC9EF862BCEADA8000F4A6B /* CustomNavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavBar.swift; sourceTree = "<group>"; };
+		3CC9EF882BCEADBD000F4A6B /* DefaultTextStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTextStyle.swift; sourceTree = "<group>"; };
+		3CC9EF8A2BCEADD7000F4A6B /* LineDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineDivider.swift; sourceTree = "<group>"; };
+		3CC9EF8D2BCEADF5000F4A6B /* Text+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Extension.swift"; sourceTree = "<group>"; };
 		F64BEC87C4E03CA588517362 /* Pods-car-list-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-car-list-sample.debug.xcconfig"; path = "Target Support Files/Pods-car-list-sample/Pods-car-list-sample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,6 +80,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D1EDA58900D2E3A6C67FED36 /* Pods_car_list_sample.framework in Frameworks */,
+				3CC9EF962BCEB493000F4A6B /* StarRating in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,6 +90,8 @@
 		3CC9EF2A2BCEA664000F4A6B = {
 			isa = PBXGroup;
 			children = (
+				3CC9EF8C2BCEADE4000F4A6B /* Extensions */,
+				3CC9EF852BCEAD93000F4A6B /* ReusableViews */,
 				3CC9EF672BCEAA88000F4A6B /* .swiftformat */,
 				3CC9EF682BCEAA88000F4A6B /* .swiftlint.yml */,
 				3CC9EF652BCEAA75000F4A6B /* swiftgen.yml */,
@@ -112,6 +136,7 @@
 		3CC9EF4C2BCEA7B4000F4A6B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3CC9EF832BCEAD66000F4A6B /* car_list.json */,
 				3CC9EF4F2BCEA7FC000F4A6B /* Strings */,
 				3CC9EF4E2BCEA7F8000F4A6B /* Fonts */,
 				3CC9EF4D2BCEA7F3000F4A6B /* Assets */,
@@ -169,6 +194,7 @@
 		3CC9EF622BCEA92A000F4A6B /* Strings */ = {
 			isa = PBXGroup;
 			children = (
+				3CC9EF7E2BCEAD01000F4A6B /* Strings.swift */,
 			);
 			path = Strings;
 			sourceTree = "<group>";
@@ -176,6 +202,7 @@
 		3CC9EF632BCEA93C000F4A6B /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				3CC9EF7C2BCEACFE000F4A6B /* Fonts.swift */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -183,6 +210,7 @@
 		3CC9EF642BCEA941000F4A6B /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				3CC9EF7A2BCEACF6000F4A6B /* Assets.swift */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -232,6 +260,7 @@
 		3CC9EF732BCEAB5A000F4A6B /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3CC9EF802BCEAD21000F4A6B /* SubViews */,
 				3CC9EF762BCEAB71000F4A6B /* HomeView.swift */,
 			);
 			path = Views;
@@ -240,8 +269,35 @@
 		3CC9EF742BCEAB5D000F4A6B /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				3CC9EF782BCEACA5000F4A6B /* CarListViewModel.swift */,
 			);
 			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		3CC9EF802BCEAD21000F4A6B /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				3CC9EF812BCEAD2C000F4A6B /* CarListView.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		3CC9EF852BCEAD93000F4A6B /* ReusableViews */ = {
+			isa = PBXGroup;
+			children = (
+				3CC9EF862BCEADA8000F4A6B /* CustomNavBar.swift */,
+				3CC9EF882BCEADBD000F4A6B /* DefaultTextStyle.swift */,
+				3CC9EF8A2BCEADD7000F4A6B /* LineDivider.swift */,
+			);
+			path = ReusableViews;
+			sourceTree = "<group>";
+		};
+		3CC9EF8C2BCEADE4000F4A6B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3CC9EF8D2BCEADF5000F4A6B /* Text+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		73F88617EE2890C36C05CD37 /* Pods */ = {
@@ -281,6 +337,9 @@
 			dependencies = (
 			);
 			name = "car-list-sample";
+			packageProductDependencies = (
+				3CC9EF952BCEB493000F4A6B /* StarRating */,
+			);
 			productName = "car-list-sample";
 			productReference = 3CC9EF332BCEA664000F4A6B /* car-list-sample.app */;
 			productType = "com.apple.product-type.application";
@@ -309,6 +368,9 @@
 				Base,
 			);
 			mainGroup = 3CC9EF2A2BCEA664000F4A6B;
+			packageReferences = (
+				3CC9EF942BCEB493000F4A6B /* XCRemoteSwiftPackageReference "StarRating" */,
+			);
 			productRefGroup = 3CC9EF342BCEA664000F4A6B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -325,6 +387,7 @@
 			files = (
 				3CC9EF6A2BCEAA88000F4A6B /* .swiftlint.yml in Resources */,
 				3CC9EF3E2BCEA666000F4A6B /* Preview Assets.xcassets in Resources */,
+				3CC9EF842BCEAD66000F4A6B /* car_list.json in Resources */,
 				3CC9EF552BCEA834000F4A6B /* Poppins-Bold.ttf in Resources */,
 				3CC9EF592BCEA834000F4A6B /* Poppins-Regular.ttf in Resources */,
 				3CC9EF3B2BCEA666000F4A6B /* Assets.xcassets in Resources */,
@@ -425,11 +488,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CC9EF8E2BCEADF5000F4A6B /* Text+Extension.swift in Sources */,
+				3CC9EF7D2BCEACFE000F4A6B /* Fonts.swift in Sources */,
+				3CC9EF872BCEADA8000F4A6B /* CustomNavBar.swift in Sources */,
+				3CC9EF822BCEAD2C000F4A6B /* CarListView.swift in Sources */,
+				3CC9EF7F2BCEAD01000F4A6B /* Strings.swift in Sources */,
 				3CC9EF402BCEA666000F4A6B /* Persistence.swift in Sources */,
+				3CC9EF7B2BCEACF6000F4A6B /* Assets.swift in Sources */,
+				3CC9EF8B2BCEADD7000F4A6B /* LineDivider.swift in Sources */,
 				3CC9EF432BCEA666000F4A6B /* car_list_sample.xcdatamodeld in Sources */,
 				3CC9EF772BCEAB71000F4A6B /* HomeView.swift in Sources */,
 				3CC9EF372BCEA664000F4A6B /* car_list_sampleApp.swift in Sources */,
 				3CC9EF6E2BCEAB12000F4A6B /* CarDto.swift in Sources */,
+				3CC9EF892BCEADBD000F4A6B /* DefaultTextStyle.swift in Sources */,
+				3CC9EF792BCEACA5000F4A6B /* CarListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,6 +702,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3CC9EF942BCEB493000F4A6B /* XCRemoteSwiftPackageReference "StarRating" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/dkk/StarRating";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3CC9EF952BCEB493000F4A6B /* StarRating */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3CC9EF942BCEB493000F4A6B /* XCRemoteSwiftPackageReference "StarRating" */;
+			productName = StarRating;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		3CC9EF412BCEA666000F4A6B /* car_list_sample.xcdatamodeld */ = {

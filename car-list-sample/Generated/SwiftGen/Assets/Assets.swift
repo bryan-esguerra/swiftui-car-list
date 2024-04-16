@@ -25,14 +25,15 @@ internal typealias AssetImageTypeAlias = ImageAsset.Image
 // swiftlint:disable identifier_name line_length nesting type_body_length type_name
 internal enum Asset {
     internal enum Color {
-        internal static let darkGray = ColorAsset(name: "darkGray")
-        internal static let lightGray = ColorAsset(name: "lightGray")
-        internal static let orange = ColorAsset(name: "orange")
+        internal static let darkGray = ColorAsset(name: "DarkGray")
+        internal static let lightGray = ColorAsset(name: "LightGray")
+        internal static let orange = ColorAsset(name: "Orange")
     }
 
     internal enum Image {
         internal static let alphineRoadster = ImageAsset(name: "Alphine-Roadster")
         internal static let bmw3300i = ImageAsset(name: "BMW-3300i")
+        internal static let defaultCar = ImageAsset(name: "DefaultCar")
         internal static let landRoverRangeRover = ImageAsset(name: "LandRover-RangeRover")
         internal static let mercedesBenzGLEcoupe = ImageAsset(name: "MercedesBenz-GLEcoupe")
         internal static let tacoma = ImageAsset(name: "Tacoma")

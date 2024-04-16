@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct HomeView: View {
+    @StateObject var viewModel = CarListViewModel()
+
     var body: some View {
-        ZStack {
-            Text("Home")
-        }
+        CarListView(viewModel: viewModel)
+            .onAppear {
+                viewModel.fetchCars()
+            }
     }
 }
