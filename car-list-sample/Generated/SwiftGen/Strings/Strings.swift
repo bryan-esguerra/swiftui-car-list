@@ -14,8 +14,8 @@ internal enum L10n {
         internal enum Title {
             /// Get your's now
             internal static let description = L10n.tr("Localizable", "banner.title.description", fallback: "Get your's now")
-            /// TACOMA 2021
-            internal static let label = L10n.tr("Localizable", "banner.title.label", fallback: "TACOMA 2021")
+            /// Tacoma 2021
+            internal static let label = L10n.tr("Localizable", "banner.title.label", fallback: "Tacoma 2021")
         }
     }
 
