@@ -12,6 +12,7 @@ final class CarCoreDataService: CoreDataService {
 
     func addCarsFromList(carDto: [CarDto]) {
         if !carDto.isEmpty {
+            deleteCars()
             for car in carDto {
                 addCar(carDto: car)
             }
@@ -69,6 +70,19 @@ final class CarCoreDataService: CoreDataService {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
             return nil
+        }
+    }
+
+    private func deleteCars() {
+        let context = persistentContainer.viewContext
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+
+        do {
+            try context.execute(deleteRequest)
+            try context.save()
+        } catch let error as NSError {
+            print("Could not delete. \(error), \(error.userInfo)")
         }
     }
 }

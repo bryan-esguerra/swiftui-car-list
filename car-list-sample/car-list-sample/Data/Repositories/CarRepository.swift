@@ -5,6 +5,7 @@
 //  Created by Robert Bryan Esguerra on 17/4/24.
 //
 
+import Combine
 import Foundation
 
 class CarRepository {
@@ -16,34 +17,36 @@ class CarRepository {
         self.jsonFileName = jsonFileName
     }
 
-    func getCars(completion: @escaping ([CarDto]) -> Void) {
+    func getCars() -> AnyPublisher<[CarDto], Error> {
         if let carsFromCoreData = carDataService.loadAllCars(), !carsFromCoreData.isEmpty {
-            completion(carsFromCoreData)
+            return Just(carsFromCoreData)
+                .setFailureType(to: Error.self)
+                .eraseToAnyPublisher()
         } else {
-            loadCarsFromJSON(completion: completion)
+            return loadCarsFromJSON()
+                .eraseToAnyPublisher()
         }
     }
 
-    private func saveCars(cars: [CarDto]) {
-        carDataService.addCarsFromList(carDto: cars)
-    }
-
-    private func loadCarsFromJSON(completion: @escaping ([CarDto]) -> Void) {
+    private func loadCarsFromJSON() -> AnyPublisher<[CarDto], Error> {
         guard let url = Bundle.main.url(forResource: jsonFileName, withExtension: "json") else {
-            print("JSON file not found")
-            completion([])
-            return
+            return Fail(error: NSError(domain: "", code: 404, userInfo: nil))
+                .eraseToAnyPublisher()
         }
 
         do {
             let data = try Data(contentsOf: url)
             let decoder = JSONDecoder()
-            let cars = try decoder.decode([CarDto].self, from: data)
-            saveCars(cars: cars)
-            completion(cars)
+            return try Just(decoder.decode([CarDto].self, from: data))
+                .setFailureType(to: Error.self)
+                .eraseToAnyPublisher()
         } catch {
-            print("Error decoding JSON: \(error)")
-            completion([])
+            return Fail(error: error)
+                .eraseToAnyPublisher()
         }
+    }
+
+    func saveCars(cars: [CarDto]) {
+        carDataService.addCarsFromList(carDto: cars)
     }
 }

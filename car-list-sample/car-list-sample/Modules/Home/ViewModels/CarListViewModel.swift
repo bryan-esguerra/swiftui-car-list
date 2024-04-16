@@ -38,40 +38,18 @@ class CarListViewModel: ObservableObject {
     }
 
     func fetchCars() {
-        carRepository.getCars { cars in
-            DispatchQueue.main.async {
-                self.cars = cars
-                self.filteredCars = cars
-                self.updateAvailableMakesAndModels(from: cars)
-            }
-        }
+        carRepository.getCars()
+            .sink(receiveCompletion: { _ in
+            }, receiveValue: { [weak self] cars in
+                self?.carRepository.saveCars(cars: cars)
+                DispatchQueue.main.async {
+                    self?.cars = cars
+                    self?.filteredCars = cars
+                    self?.updateAvailableMakesAndModels(from: cars)
+                }
+            })
+            .store(in: &cancellables)
     }
-
-//    func fetchCars() {
-//        guard let url = Bundle.main.url(forResource: "car_list", withExtension: "json") else {
-//            print("JSON file not found")
-//            return
-//        }
-//
-//        URLSession.shared.dataTaskPublisher(for: url)
-//            .map { $0.data }
-//            .decode(type: [CarDto].self, decoder: JSONDecoder())
-//            .sink { completion in
-//                switch completion {
-//                case .finished:
-//                    print("JSON decoding finished")
-//                case let .failure(error):
-//                    print("Failed to decode JSON: \(error)")
-//                }
-//            } receiveValue: { [weak self] cars in
-//                DispatchQueue.main.async {
-//                    self?.cars = cars
-//                    self?.filteredCars = cars
-//                    self?.updateAvailableMakesAndModels(from: cars)
-//                }
-//            }
-//            .store(in: &cancellables)
-//    }
 
     private func updateAvailableMakesAndModels(from cars: [CarDto]) {
         availableMakes = [defaultMaker] + Array(Set(cars.compactMap { $0.make }))
