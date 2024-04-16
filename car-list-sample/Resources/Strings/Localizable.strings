@@ -1,0 +1,16 @@
+//Navigation bar
+"nav.title.label" = "GUIDOMIA";
+
+//Banner
+"banner.title.label" = "TACOMA 2021";
+"banner.title.description" = "Get your's now";
+
+//Filter
+"filters.title.label" = "Filters";
+"filters.make.label" = "Any make";
+"filters.model.label" = "Any model";
+
+//Car list
+"list.price.label" = "Price : %@";
+"list.pros.label" = "Pros :";
+"list.cons.label" = "Cons :";
