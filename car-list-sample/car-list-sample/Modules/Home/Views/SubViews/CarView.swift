@@ -4,12 +4,14 @@
 //
 //  Created by Robert Bryan Esguerra on 16/4/24.
 //
+
 import StarRating
 import SwiftUI
 
 struct CarView: View {
     let car: CarDto
     let index: Int
+    @Binding var selectedIndex: Int?
     @State var customConfig = StarRatingConfiguration(
         spacing: 5,
         numberOfStars: 5,
@@ -41,6 +43,15 @@ struct CarView: View {
                                          textAlign: .leading)
                             .padding(.leading, 10)
                         StarRating(initialRating: Double(car.rating), configuration: $customConfig)
+                    }
+                }
+
+                if self.selectedIndex == index {
+                    if !car.prosList.isEmpty {
+                        ProsConsView(title: L10n.List.Pros.label, items: car.prosList)
+                    }
+                    if !car.consList.isEmpty {
+                        ProsConsView(title: L10n.List.Cons.label, items: car.consList)
                     }
                 }
             }

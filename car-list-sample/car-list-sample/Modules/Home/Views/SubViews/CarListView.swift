@@ -14,11 +14,17 @@ struct CarListView: View {
     var body: some View {
         ScrollView {
             BannerView()
-
             ForEach(Array(viewModel.cars.enumerated()), id: \.element.make) { index, car in
-                CarView(car: car, index: index)
+                CarView(car: car, index: index, selectedIndex: $selectedIndex)
                     .padding(.leading, 15)
                     .padding(.trailing, 15)
+                    .onTapGesture {
+                        if self.selectedIndex == index {
+                            self.selectedIndex = nil
+                        } else {
+                            self.selectedIndex = index
+                        }
+                    }
                 Spacer()
                 LineDivider()
                     .padding(.leading, 25)

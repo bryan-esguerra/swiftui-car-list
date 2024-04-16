@@ -38,6 +38,7 @@
 		3CC9EF962BCEB493000F4A6B /* StarRating in Frameworks */ = {isa = PBXBuildFile; productRef = 3CC9EF952BCEB493000F4A6B /* StarRating */; };
 		3CC9EF982BCEC44D000F4A6B /* BannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9EF972BCEC44D000F4A6B /* BannerView.swift */; };
 		3CC9EF9A2BCEC465000F4A6B /* CarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9EF992BCEC465000F4A6B /* CarView.swift */; };
+		3CC9EF9C2BCEC6A1000F4A6B /* ProsConsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CC9EF9B2BCEC6A1000F4A6B /* ProsConsView.swift */; };
 		D1EDA58900D2E3A6C67FED36 /* Pods_car_list_sample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38BB8C48C3F5C1DD1D69A686 /* Pods_car_list_sample.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		3CC9EF8D2BCEADF5000F4A6B /* Text+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Text+Extension.swift"; sourceTree = "<group>"; };
 		3CC9EF972BCEC44D000F4A6B /* BannerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerView.swift; sourceTree = "<group>"; };
 		3CC9EF992BCEC465000F4A6B /* CarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarView.swift; sourceTree = "<group>"; };
+		3CC9EF9B2BCEC6A1000F4A6B /* ProsConsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProsConsView.swift; sourceTree = "<group>"; };
 		F64BEC87C4E03CA588517362 /* Pods-car-list-sample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-car-list-sample.debug.xcconfig"; path = "Target Support Files/Pods-car-list-sample/Pods-car-list-sample.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -284,6 +286,7 @@
 				3CC9EF812BCEAD2C000F4A6B /* CarListView.swift */,
 				3CC9EF972BCEC44D000F4A6B /* BannerView.swift */,
 				3CC9EF992BCEC465000F4A6B /* CarView.swift */,
+				3CC9EF9B2BCEC6A1000F4A6B /* ProsConsView.swift */,
 			);
 			path = SubViews;
 			sourceTree = "<group>";
@@ -495,6 +498,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3CC9EF8E2BCEADF5000F4A6B /* Text+Extension.swift in Sources */,
+				3CC9EF9C2BCEC6A1000F4A6B /* ProsConsView.swift in Sources */,
 				3CC9EF7D2BCEACFE000F4A6B /* Fonts.swift in Sources */,
 				3CC9EF872BCEADA8000F4A6B /* CustomNavBar.swift in Sources */,
 				3CC9EF822BCEAD2C000F4A6B /* CarListView.swift in Sources */,
