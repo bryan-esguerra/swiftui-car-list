@@ -16,7 +16,9 @@ struct FilterView: View {
     var body: some View {
         VStack(spacing: 10) {
             DefaultTextStyle(title: L10n.Filters.Title.label,
-                             size: 22, fontWeight: .w400, textAlign: .leading)
+                             size: 22,
+                             fontWeight: .w400,
+                             textAlign: .leading)
                 .padding(.leading, 20)
             PickerView(items: makes, label: L10n.Filters.Make.label, selectedOption: $selectedMake)
             PickerView(items: models, label: L10n.Filters.Model.label, selectedOption: $selectedModel)

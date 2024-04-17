@@ -15,7 +15,7 @@ struct ProsConsView: View {
         VStack(alignment: .leading, spacing: 5) {
             DefaultTextStyle(title: title,
                              size: 14,
-                             fontColor: Asset.Color.darkGray.swiftUIColor,
+                             fontColor: Asset.Color.black45.swiftUIColor,
                              textAlign: .leading)
             ForEach(items.filter { !$0.isEmpty }, id: \.self) { item in
                 HStack {
