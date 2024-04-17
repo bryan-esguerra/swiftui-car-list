@@ -15,15 +15,15 @@ struct ProsConsView: View {
         VStack(alignment: .leading, spacing: 5) {
             DefaultTextStyle(title: title,
                              size: 14,
-                             fontColor: Asset.Color.darkGray.swiftUIColor,
+                             fontColor: Asset.Color.black45.swiftUIColor,
                              textAlign: .leading)
             ForEach(items.filter { !$0.isEmpty }, id: \.self) { item in
                 HStack {
                     DefaultTextStyle(title: "•",
-                                     size: 12,
+                                     size: 20,
                                      fontColor: Asset.Color.orange.swiftUIColor,
                                      textAlign: .leading)
-                        .frame(width: 5)
+                        .frame(width: 10)
                     DefaultTextStyle(title: item,
                                      size: 12,
                                      fontColor: .black,

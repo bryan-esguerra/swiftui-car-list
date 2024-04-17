@@ -18,12 +18,12 @@ struct BannerView: View {
             VStack {
                 Spacer()
                 DefaultTextStyle(title: L10n.Banner.Title.label,
-                                 size: 28,
-                                 fontWeight: .w600,
+                                 size: 36,
+                                 fontWeight: .w700,
                                  textAlign: TextAlignment.leading)
                 DefaultTextStyle(title: L10n.Banner.Title.description,
-                                 size: 16,
-                                 fontWeight: .w400,
+                                 size: 22,
+                                 fontWeight: .w500,
                                  textAlign: TextAlignment.leading)
             }
             .padding(20)
