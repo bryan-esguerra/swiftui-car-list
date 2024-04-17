@@ -11,7 +11,6 @@ struct PickerView: View {
     var items: [String]
     var label: String
     @Binding var selectedOption: String
-    @State private var isPickerPresented = false
 
     var body: some View {
         HStack {
@@ -21,7 +20,7 @@ struct PickerView: View {
                     DefaultTextStyle(title: item).tag(item)
                 }
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
+            .frame(maxWidth: .infinity, alignment: .center)
             .alignmentGuide(.leading) { _ in 0 }
             .alignmentGuide(.trailing) { _ in 0 }
             .pickerStyle(MenuPickerStyle())

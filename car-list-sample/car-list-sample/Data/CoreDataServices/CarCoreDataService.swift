@@ -12,6 +12,7 @@ final class CarCoreDataService: CoreDataService {
 
     func addCarsFromList(carDto: [CarDto]) {
         if !carDto.isEmpty {
+            deleteCars()
             for car in carDto {
                 addCar(carDto: car)
             }
@@ -26,8 +27,8 @@ final class CarCoreDataService: CoreDataService {
         entity.setValue(carDto.customerPrice, forKeyPath: "customerPrice")
         entity.setValue(carDto.marketPrice, forKeyPath: "marketPrice")
         entity.setValue(carDto.rating, forKeyPath: "rating")
-        entity.setValue(carDto.prosList.joined(separator: ","), forKeyPath: "pros")
-        entity.setValue(carDto.consList.joined(separator: ","), forKeyPath: "cons")
+        entity.setValue(carDto.prosList.joined(separator: ",,,"), forKeyPath: "pros")
+        entity.setValue(carDto.consList.joined(separator: ",,,"), forKeyPath: "cons")
 
         do {
             try context.save()
@@ -60,8 +61,8 @@ final class CarCoreDataService: CoreDataService {
                     customerPrice: customerPrice,
                     marketPrice: marketPrice,
                     rating: Int(rating),
-                    prosList: pros.components(separatedBy: ","),
-                    consList: cons.components(separatedBy: ",")
+                    prosList: pros.isEmpty ? [] : pros.components(separatedBy: ",,,"),
+                    consList: cons.isEmpty ? [] : cons.components(separatedBy: ",,,")
                 )
             }
 
@@ -69,6 +70,19 @@ final class CarCoreDataService: CoreDataService {
         } catch let error as NSError {
             print("Could not fetch. \(error), \(error.userInfo)")
             return nil
+        }
+    }
+
+    private func deleteCars() {
+        let context = persistentContainer.viewContext
+        let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+
+        do {
+            try context.execute(deleteRequest)
+            try context.save()
+        } catch let error as NSError {
+            print("Could not delete. \(error), \(error.userInfo)")
         }
     }
 }
