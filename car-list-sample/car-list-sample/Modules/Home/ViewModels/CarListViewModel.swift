@@ -34,7 +34,6 @@ class CarListViewModel: ObservableObject {
         self.carRepository = carRepository
         selectedMake = defaultMaker
         selectedModel = defaultModel
-        fetchCars()
     }
 
     func fetchCars() {

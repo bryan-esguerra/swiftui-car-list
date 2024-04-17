@@ -27,8 +27,8 @@ final class CarCoreDataService: CoreDataService {
         entity.setValue(carDto.customerPrice, forKeyPath: "customerPrice")
         entity.setValue(carDto.marketPrice, forKeyPath: "marketPrice")
         entity.setValue(carDto.rating, forKeyPath: "rating")
-        entity.setValue(carDto.prosList.joined(separator: ","), forKeyPath: "pros")
-        entity.setValue(carDto.consList.joined(separator: ","), forKeyPath: "cons")
+        entity.setValue(carDto.prosList.joined(separator: ",,,"), forKeyPath: "pros")
+        entity.setValue(carDto.consList.joined(separator: ",,,"), forKeyPath: "cons")
 
         do {
             try context.save()
@@ -61,8 +61,8 @@ final class CarCoreDataService: CoreDataService {
                     customerPrice: customerPrice,
                     marketPrice: marketPrice,
                     rating: Int(rating),
-                    prosList: pros.components(separatedBy: ","),
-                    consList: cons.components(separatedBy: ",")
+                    prosList: pros.isEmpty ? [] : pros.components(separatedBy: ",,,"),
+                    consList: cons.isEmpty ? [] : cons.components(separatedBy: ",,,")
                 )
             }
 

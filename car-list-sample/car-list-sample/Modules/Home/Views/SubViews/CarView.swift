@@ -34,14 +34,14 @@ struct CarView: View {
                     VStack(spacing: 2) {
                         DefaultTextStyle(title: "\(car.make ?? "") \(car.model ?? "")",
                                          size: 16,
-                                         fontColor: Asset.Color.darkGray.swiftUIColor,
+                                         fontColor: Asset.Color.black45.swiftUIColor,
                                          fontWeight: .w600,
                                          textAlign: .leading)
                             .padding(.leading, 10)
                             .fixedSize(horizontal: false, vertical: true)
                         DefaultTextStyle(title: L10n.List.Price.label(formatNumber(Int(car.customerPrice))),
                                          size: 14,
-                                         fontColor: Asset.Color.darkGray.swiftUIColor,
+                                         fontColor: Asset.Color.black45.swiftUIColor,
                                          textAlign: .leading)
                             .padding(.leading, 10)
                             .frame(height: 15)
@@ -51,10 +51,10 @@ struct CarView: View {
                 }
 
                 if self.selectedIndex == index {
-                    if !car.prosList.isEmpty {
+                    if !car.prosList.isEmpty && !car.prosList.isEmpty {
                         ProsConsView(title: L10n.List.Pros.label, items: car.prosList)
                     }
-                    if !car.consList.isEmpty {
+                    if !car.consList.isEmpty && !car.consList.isEmpty {
                         ProsConsView(title: L10n.List.Cons.label, items: car.consList)
                     }
                 }
