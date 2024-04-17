@@ -51,10 +51,10 @@ struct CarView: View {
                 }
 
                 if self.selectedIndex == index {
-                    if !car.prosList.isEmpty {
+                    if !car.prosList.isEmpty && !car.prosList.isEmpty {
                         ProsConsView(title: L10n.List.Pros.label, items: car.prosList)
                     }
-                    if !car.consList.isEmpty {
+                    if !car.consList.isEmpty && !car.consList.isEmpty {
                         ProsConsView(title: L10n.List.Cons.label, items: car.consList)
                     }
                 }
