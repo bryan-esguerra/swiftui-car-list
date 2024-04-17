@@ -12,6 +12,7 @@ struct PickerView: View {
     var label: String
     @Binding var selectedOption: String
     @State private var isPickerPresented = false
+    @State private var isPickerVisible = false
 
     var body: some View {
         HStack {
