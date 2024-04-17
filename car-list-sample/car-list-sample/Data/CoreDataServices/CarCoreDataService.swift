@@ -61,8 +61,8 @@ final class CarCoreDataService: CoreDataService {
                     customerPrice: customerPrice,
                     marketPrice: marketPrice,
                     rating: Int(rating),
-                    prosList: pros.components(separatedBy: ",,,"),
-                    consList: cons.components(separatedBy: ",,,")
+                    prosList: pros.isEmpty ? [] : pros.components(separatedBy: ",,,"),
+                    consList: cons.isEmpty ? [] : cons.components(separatedBy: ",,,")
                 )
             }
 
