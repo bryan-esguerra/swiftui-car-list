@@ -9,56 +9,56 @@ import Foundation
 
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
-internal enum L10n {
-    internal enum Banner {
-        internal enum Title {
+enum L10n {
+    enum Banner {
+        enum Title {
             /// Get your's now
-            internal static let description = L10n.tr("Localizable", "banner.title.description", fallback: "Get your's now")
+            static let description = L10n.tr("Localizable", "banner.title.description", fallback: "Get your's now")
             /// Tacoma 2021
-            internal static let label = L10n.tr("Localizable", "banner.title.label", fallback: "Tacoma 2021")
+            static let label = L10n.tr("Localizable", "banner.title.label", fallback: "Tacoma 2021")
         }
     }
 
-    internal enum Filters {
-        internal enum Make {
+    enum Filters {
+        enum Make {
             /// Any make
-            internal static let label = L10n.tr("Localizable", "filters.make.label", fallback: "Any make")
+            static let label = L10n.tr("Localizable", "filters.make.label", fallback: "Any make")
         }
 
-        internal enum Model {
+        enum Model {
             /// Any model
-            internal static let label = L10n.tr("Localizable", "filters.model.label", fallback: "Any model")
+            static let label = L10n.tr("Localizable", "filters.model.label", fallback: "Any model")
         }
 
-        internal enum Title {
+        enum Title {
             /// Filters
-            internal static let label = L10n.tr("Localizable", "filters.title.label", fallback: "Filters")
+            static let label = L10n.tr("Localizable", "filters.title.label", fallback: "Filters")
         }
     }
 
-    internal enum List {
-        internal enum Cons {
+    enum List {
+        enum Cons {
             /// Cons :
-            internal static let label = L10n.tr("Localizable", "list.cons.label", fallback: "Cons :")
+            static let label = L10n.tr("Localizable", "list.cons.label", fallback: "Cons :")
         }
 
-        internal enum Price {
+        enum Price {
             /// Price : %@
-            internal static func label(_ p1: Any) -> String {
+            static func label(_ p1: Any) -> String {
                 return L10n.tr("Localizable", "list.price.label", String(describing: p1), fallback: "Price : %@")
             }
         }
 
-        internal enum Pros {
+        enum Pros {
             /// Pros :
-            internal static let label = L10n.tr("Localizable", "list.pros.label", fallback: "Pros :")
+            static let label = L10n.tr("Localizable", "list.pros.label", fallback: "Pros :")
         }
     }
 
-    internal enum Nav {
-        internal enum Title {
+    enum Nav {
+        enum Title {
             /// GUIDOMIA
-            internal static let label = L10n.tr("Localizable", "nav.title.label", fallback: "GUIDOMIA")
+            static let label = L10n.tr("Localizable", "nav.title.label", fallback: "GUIDOMIA")
         }
     }
 }
