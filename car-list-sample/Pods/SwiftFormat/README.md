@@ -3,7 +3,7 @@
 [![PayPal](https://img.shields.io/badge/paypal-donate-blue.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9ZGWNK5FEZFF6&source=url)
 [![Build](https://github.com/nicklockwood/SwiftFormat/actions/workflows/build.yml/badge.svg)](https://github.com/nicklockwood/SwiftFormat/actions/workflows/build.yml)
 [![Codecov](https://codecov.io/gh/nicklockwood/SwiftFormat/graphs/badge.svg)](https://codecov.io/gh/nicklockwood/SwiftFormat)
-[![Swift 4.2](https://img.shields.io/badge/swift-4.2-red.svg?style=flat)](https://developer.apple.com/swift)
+[![Swift 5.1](https://img.shields.io/badge/swift-5.1-red.svg?style=flat)](https://developer.apple.com/swift)
 [![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://opensource.org/licenses/MIT)
 [![Mastodon](https://img.shields.io/badge/mastodon-@nicklockwood@mastodon.social-636dff.svg)](https://mastodon.social/@nicklockwood)
 
@@ -20,7 +20,9 @@ Table of Contents
     - [Via Applescript](#via-applescript)
     - [VSCode plugin](#vscode-plugin)
     - [Sublime Text plugin](#sublime-text-plugin)
+    - [Nova plugin](nova-plugin)
     - [Git pre-commit hook](#git-pre-commit-hook)
+    - [GitHub Actions](#github-actions)
     - [On CI using Danger](#on-ci-using-danger)
     - [Bazel build](#bazel-build)
     - [Docker](#docker)
@@ -43,7 +45,7 @@ Table of Contents
 What is this?
 ----------------
 
-SwiftFormat is a code library and command-line tool for reformatting Swift code on macOS or Linux.
+SwiftFormat is a code library and command-line tool for reformatting Swift code on macOS, Linux or Windows.
 
 SwiftFormat goes above and beyond what you might expect from a code formatter. In addition to adjusting white space it can insert or remove implicit `self`, remove redundant parentheses, and correct many other deviations from the standard Swift idioms.
 
@@ -275,6 +277,8 @@ You can also use `swift run -c release --package-path BuildTools swiftformat "$S
 
 **NOTE:** You may wish to check BuildTools/Package.swift into your source control so that the version used by your run-script phase is kept in version control. It is recommended to add the following to your .gitignore file: `BuildTools/.build` and `BuildTools/.swiftpm`.
 
+**NOTE (2):** If you are using Xcode 15 or later, make sure that the `ENABLE_USER_SCRIPT_SANDBOXING` (aka "User Script Sandboxing") option is set to NO, otherwise SwiftFormat won't be able to run correctly.
+
 ### Using CocoaPods
 
 #### 1) Add the SwiftFormat CLI to your Podfile
@@ -337,7 +341,7 @@ fi
 or you can create a symbolic link in `/usr/local/bin` pointing to the actual binary:
 
 ```bash
-ln -s /opt/homebrew/bin/swiftlint /usr/local/bin/swiftlint
+ln -s /opt/homebrew/bin/swiftformat /usr/local/bin/swiftformat
 ```
 
 Swift Package Manager plugin
@@ -410,6 +414,12 @@ Sublime Text plugin
 If you prefer to use the [Sublime Text](https://www.sublimetext.com) editor, try the [Sublime-Swift-Format plugin](https://github.com/aerobounce/Sublime-Swift-Format) by [Aerobounce](https://github.com/aerobounce).
 
 
+Nova plugin
+-----------
+
+If you prefer to use the [Nova](https://panic.com/nova) editor, try the [SwiftFormat extension](https://extensions.panic.com/extensions/org.padraig/org.padraig.SwiftFormat/) by [Pádraig Ó Cinnéide](https://mastodon.social/@PadraigOCinneide).
+
+
 Git pre-commit hook
 ---------------------
 
@@ -435,6 +445,25 @@ The pre-commit hook will now run whenever you run `git commit`. Running `git com
 **NOTE:** If you are using Git via a GUI client such as [Tower](https://www.git-tower.com), [additional steps](https://www.git-tower.com/help/mac/faq-and-tips/faq/hook-scripts) may be needed.
 
 **NOTE (2):** Unlike the Xcode build phase approach, git pre-commit hook won't be checked in to source control, and there's no way to guarantee that all users of the project are using the same version of SwiftFormat. For a collaborative project, you might want to consider a *post*-commit hook instead, which would run on your continuous integration server.
+
+GitHub Actions
+---------------------
+
+1. SwiftFormat comes preinstalled on all macOS GitHub-hosted runners. If you are self hosting you will need to ensure SwiftFormat is installed on your runner.
+2. Create a GitHub Actions workflow using SwiftFormat, passing the `--reporter github-actions-log` command line option. The following example action lints pull requests using SwiftFormat, reporting warnings using the GitHub Actions log.
+```yaml
+# Lint.yml
+name: Lint
+on: pull_request
+
+jobs:
+  Lint:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: SwiftFormat
+        run: swiftformat --lint . --reporter github-actions-log
+```
 
 On CI using Danger
 -------------------
@@ -506,7 +535,7 @@ The options available in SwiftFormat can be displayed using the `--options` comm
 
 Rules are configured by adding `--[option_name] [value]` to your command-line arguments, or by creating a `.swiftformat` [config file](#config-file) and placing it in your project directory.
 
-A given option may affect multiple rules. Use `--ruleinfo [rule_name]` command for details about which options affect a given rule, or see the [Rules.md](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md) file.
+A given option may affect multiple rules. Use `--ruleinfo [rule_name]` command for details about which options affect a given rule, or see the [Rules.md](https://github.com/nicklockwood/SwiftFormat/blob/main/Rules.md) file.
 
 You can configure options for specific files or code ranges by using `swiftformat:options` directive in comments inside your Swift file. To temporarily set one or more options inside a source file, use:
 
@@ -525,7 +554,7 @@ doTheThing(); print("Did the thing")
 Rules
 -----
 
-SwiftFormat includes over 50 rules, and new ones are added all the time. An up-to-date list can be found in [Rules.md](https://github.com/nicklockwood/SwiftFormat/blob/master/Rules.md) along with documentation for how they are used.
+SwiftFormat includes over 50 rules, and new ones are added all the time. An up-to-date list can be found in [Rules.md](https://github.com/nicklockwood/SwiftFormat/blob/main/Rules.md) along with documentation for how they are used.
 
 The list of available rules can be displayed within the command-line app using the `--rules` argument. Rules can be either enabled or disabled. Most are enabled by default. Disabled rules are marked with "(disabled)" when displayed using `--rules`.
 
@@ -626,7 +655,7 @@ The preferred option is to add a `.swift-version` file to your project directory
 
 The `.swift-version` file applies hierarchically; If you have submodules in your project that use a different Swift version, you can add separate `.swift-version` files to those directories.
 
-The other option to specify the Swift version using the `--swiftversion` command line argument. Note that this will be overridden by any `.swift-version` files encountered while processing.
+The other option to specify the Swift version using the `--swiftversion` command line argument. Note that this will be overridden by any `.swift-version` files encountered while processing. You can also add the `--swiftversion` option to your `.swiftformat` file.
 
 
 Config file
@@ -918,7 +947,7 @@ Known issues
 
 * When running a version of SwiftFormat built using Xcode 10.2 on macOS 10.14.3 or earlier, you may experience a crash with the error "dyld: Library not loaded: @rpath/libswiftCore.dylib". To fix this, you need to install the [Swift 5 Runtime Support for Command Line Tools](https://support.apple.com/kb/DL1998). These tools are included by default in macOS 10.14.4 and later.
 
-* If you have a generic typealias that defines a closure (e.g. `typealias ResultCompletion<T> = (Result<T, Error>) -> Void`) and use this closure as an argument in a generic function (e.g. `func handle<T: Decodable>(_ completion: ResultCompletion<T>)`), the `opaqueGenericParameters` rule may update the function definition to use `some` syntax (e.g. `func handle(_ completion: ResultCompletion<some Decodable>)`). `some` syntax is not permitted in closure parameters, so this will no longer compile. Workarounds include spelling out the closure explicitly in the generic function (instead of using a `typealias`) or disabling the `opaqueGenericParameters` rule (e.g. with `// swiftformat:next:disable opaqueGenericParameters`).
+* If you have a generic typealias that defines a closure (e.g. `typealias ResultCompletion<T> = (Result<T, Error>) -> Void`) and use this closure as an argument in a generic function (e.g. `func handle<T: Decodable>(_ completion: ResultCompletion<T>)`), the `opaqueGenericParameters` rule may update the function definition to use `some` syntax (e.g. `func handle(_ completion: ResultCompletion<some Decodable>)`). `some` syntax is not permitted in closure parameters, so this will no longer compile. Workarounds include spelling out the closure explicitly in the generic function (instead of using a `typealias`) or disabling the `opaqueGenericParameters` rule (e.g. with `// swiftformat:disable:next opaqueGenericParameters`).
 
 * If compiling for macOS with Xcode 14.0 and configuring SwiftFormat with `--swift-version 5.7`, the `genericExtensions` rule may cause a build failure by updating extensions of the format `extension Collection where Element == Foo` to `extension Collection<Foo>`. This fails to compile for macOS in Xcode 14.0, because the macOS SDK in that version of Xcode [does not include](https://forums.swift.org/t/xcode-14-rc-cannot-specialize-protocol-type/60171) the Swift 5.7 standard library. Workarounds include using `--swift-version 5.6` instead, updating to Xcode 14.1+, or disabling the `genericExtensions` rule (e.g. with `// swiftformat:next:disable genericExtensions`).
 
